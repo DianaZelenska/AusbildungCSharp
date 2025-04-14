@@ -10,7 +10,7 @@ namespace Dateien
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // 0 m‰nnlich
+            // 0 m√§nnlich
             // 1 weiblich
             // 2 divers
             try
@@ -25,7 +25,7 @@ namespace Dateien
 
                 label4.Text = person.toCSV();
 
-                Datei datei = new Datei("C:\\Mist\\Person.csv");
+                Datei datei = new Datei("Person.csv");
                 datei.schreibeDatei(person.toCSV());
             }
             catch (Exception ex)
@@ -37,7 +37,7 @@ namespace Dateien
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Datei datei = new Datei("C:\\Mist\\Person.csv");
+            Datei datei = new Datei("Person.csv");
             list = datei.liesDatei();
             lbNamen.Items.Clear();
             foreach (Person person in list)
@@ -66,7 +66,7 @@ namespace Dateien
                         break;   
                 }
 
-                string fn = "C:\\Mist\\" + tbNachname.Text + ".png";
+                string fn = tbNachname.Text + ".png";
                 if ( File.Exists( fn))
                 {
                     pictureBox1.Image = Image.FromFile( fn );
